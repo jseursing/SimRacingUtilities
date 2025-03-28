@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/SimRU">
+        <file>resources/add.png</file>
+        <file>resources/background.png</file>
+        <file>resources/close.png</file>
+        <file>resources/delete.png</file>
+        <file>resources/filter.png</file>
+        <file>resources/icon.png</file>
+        <file>resources/inspect.png</file>
+        <file>resources/maximize.png</file>
+        <file>resources/minimize.png</file>
+        <file>resources/refresh.gif</file>
+        <file>resources/refresh.png</file>
+        <file>resources/restore.png</file>
+        <file>resources/run.png</file>
+        <file>resources/save.png</file>
+        <file>resources/search.png</file>
+        <file>resources/stop.png</file>
+    </qresource>
+</RCC>

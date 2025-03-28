@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+***************************************************************************************************
+ Copyright (C) 2023 The Qt Company Ltd.
+ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+***************************************************************************************************
+-->
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DD2F6F07-346A-4391-94E9-156E073477E4}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22000.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22000.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>6.5.2_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>6.5.2_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <PropertyGroup Label="QtDeploy" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtDeploy>true</QtDeploy>
+    <QtDeployDebugRelease>debug</QtDeployDebugRelease>
+    <QtDeployForce>false</QtDeployForce>
+    <QtDeployNoPatchQt>false</QtDeployNoPatchQt>
+    <QtDeployNoPlugins>false</QtDeployNoPlugins>
+    <QtDeployNoLibraries>false</QtDeployNoLibraries>
+    <QtDeployNoQuickImport>true</QtDeployNoQuickImport>
+    <QtDeployNoTranslations>true</QtDeployNoTranslations>
+    <QtDeployNoSystemD3dCompiler>true</QtDeployNoSystemD3dCompiler>
+    <QtDeployNoVirtualKeyboard>true</QtDeployNoVirtualKeyboard>
+    <QtDeployCompilerRuntime>deploy</QtDeployCompilerRuntime>
+    <QtDeployWebkit2>skip</QtDeployWebkit2>
+    <QtDeployAngle>skip</QtDeployAngle>
+    <QtDeployNoOpenglSw>false</QtDeployNoOpenglSw>
+    <QtDeployFiles>$(SolutionDir)$(Platform)\$(Configuration)\SimRacingUtilities.exe</QtDeployFiles>
+    <QtDeployDir>$(SolutionDir)Deploy\$(Configuration)\</QtDeployDir>
+    <QtDeployLibDir>$(SolutionDir)Deploy\$(Configuration)\</QtDeployLibDir>
+    <QtDeployPluginDir>$(SolutionDir)Deploy\$(Configuration)\</QtDeployPluginDir>
+    <QtDeployPdb>true</QtDeployPdb>
+  </PropertyGroup>
+  <PropertyGroup Label="QtDeploy" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtDeployFiles>$(SolutionDir)$(Platform)\$(Configuration)\SimRacingUtilities.exe</QtDeployFiles>
+    <QtDeployDir>$(SolutionDir)Deploy\$(Configuration)\</QtDeployDir>
+    <QtDeployLibDir>$(SolutionDir)Deploy\$(Configuration)\</QtDeployLibDir>
+    <QtDeployPluginDir>$(SolutionDir)Deploy\$(Configuration)\</QtDeployPluginDir>
+    <QtDeployDebugRelease>release</QtDeployDebugRelease>
+    <QtDeployPdb>false</QtDeployPdb>
+    <QtDeployForce>false</QtDeployForce>
+    <QtDeployNoPatchQt>false</QtDeployNoPatchQt>
+    <QtDeployNoPlugins>false</QtDeployNoPlugins>
+    <QtDeployNoLibraries>false</QtDeployNoLibraries>
+    <QtDeployNoQuickImport>true</QtDeployNoQuickImport>
+    <QtDeployNoTranslations>false</QtDeployNoTranslations>
+    <QtDeployNoSystemD3dCompiler>true</QtDeployNoSystemD3dCompiler>
+    <QtDeployNoVirtualKeyboard>true</QtDeployNoVirtualKeyboard>
+    <QtDeployCompilerRuntime>deploy</QtDeployCompilerRuntime>
+    <QtDeployWebkit2>skip</QtDeployWebkit2>
+    <QtDeployAngle>skip</QtDeployAngle>
+    <QtDeployNoOpenglSw>false</QtDeployNoOpenglSw>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ACTelemetry.cpp" />
+    <ClCompile Include="AppEntryWidget.cpp" />
+    <ClCompile Include="FramelessInterface.cpp" />
+    <ClCompile Include="GlobalConst.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
+    <ClCompile Include="IpcUdpSocket.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MemUtils.cpp" />
+    <ClCompile Include="SRU_Main.cpp" />
+    <ClCompile Include="TelemetryManager.cpp" />
+    <ClCompile Include="TelemetryMgrWidget.cpp" />
+    <ClCompile Include="TelemetryScanWidget.cpp" />
+    <ClCompile Include="TlmNodeWidget.cpp" />
+    <ClCompile Include="Win32Sem.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
+    <ClCompile Include="WindowMgrWidget.cpp" />
+    <ClCompile Include="WndEntryWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ACTelemetry.h" />
+    <ClInclude Include="ACTlmEnum.h" />
+    <QtMoc Include="AppEntryWidget.h" />
+    <QtMoc Include="FramelessInterface.h" />
+    <ClInclude Include="GlobalConst.h" />
+    <ClInclude Include="Interpreter.h" />
+    <ClInclude Include="IpcUdpSocket.h" />
+    <ClInclude Include="MemUtils.h" />
+    <QtMoc Include="SRU_Main.h" />
+    <ClInclude Include="TelemetryManager.h" />
+    <QtMoc Include="TelemetryMgrWidget.h" />
+    <QtMoc Include="TelemetryScanWidget.h" />
+    <QtMoc Include="TlmNodeWidget.h" />
+    <ClInclude Include="Win32Sem.h" />
+    <ClInclude Include="WindowManager.h" />
+    <QtMoc Include="WindowMgrWidget.h" />
+    <QtMoc Include="WndEntryWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="SimRU.qrc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
