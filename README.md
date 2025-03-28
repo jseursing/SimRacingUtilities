@@ -42,16 +42,20 @@ The telemetry options are listed in the tree widget while the target executable 
     Additionally, this flag enables the "write" variant of the above function
   
 
-### Window Management Demo
-
-https://github.com/user-attachments/assets/1c36e100-2f44-40ea-a8d9-b6a5c138e274
+## Window Management Demo
 
 
-### Telemetry Management Demo
+https://github.com/user-attachments/assets/067ea9da-0ae8-4221-b8e9-00c35987297f
 
-https://github.com/user-attachments/assets/b48447b7-aac3-4ce9-bc0b-05ab474c738f
 
-### Scanner Demo
+## Telemetry Management Demo
 
-https://github.com/user-attachments/assets/d607dcd6-d799-4663-a633-85ec52286d00
+
+https://github.com/user-attachments/assets/49c89507-4d97-47d4-8695-bf3ce6ea37df
+
+
+## Scanner Demo
+
+
+https://github.com/user-attachments/assets/d9168795-cc96-4e41-beac-699789891820
 
