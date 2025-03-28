@@ -39,7 +39,7 @@ The telemetry options are listed in the tree widget while the target executable 
     - "+,-,*,/"
 * For testing purposes, the scan tab accepts commands
   * using "setflag(dev,1)" enables developer mode which allows enumerating all active processes regardless if a window for it exists.
-    Additionally, this flag enables the "write" variant of the above function
+    Additionally, this flag enables the "write" variant of the above functions
   
 
 ## Window Management Demo
