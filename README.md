@@ -33,10 +33,10 @@ The telemetry options are listed in the tree widget while the target executable 
 * basic arithmetic and logical comparisons are supported for all of the above except for read[]
   - if any of arithmetic or comparisons are used, a constant must be used alongside it (ie readF(0x000)==1)
   - Available functions:
-    "==" - if its equal, then result is 1, otherwise 0
-    "!=" - if its not equal, then result is 1, otherwise 0
-    ">, >=, <, <="  - ...
-    "+,-,*,/"
+    - "==" - if its equal, then result is 1, otherwise 0
+    - "!=" - if its not equal, then result is 1, otherwise 0
+    - ">, >=, <, <="  - ...
+    - "+,-,*,/"
 * For testing purposes, the scan tab accepts commands
   * using "setflag(dev,1)" enables developer mode which allows enumerating all active processes regardless if a window for it exists.
     Additionally, this flag enables the "write" variant of the above function
