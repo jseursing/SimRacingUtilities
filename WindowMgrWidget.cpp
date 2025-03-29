@@ -62,6 +62,19 @@ void WindowMgrWidget::RefreshWindows()
   QPainter painter(BaseMonPixmap);
   painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
 
+  size_t fontSize = 8;
+  int32_t xOffset = 10;
+  switch (monitors.size())
+  {
+    case 4:
+    case 5:
+      fontSize = 6; 
+      xOffset  = 5;
+      break;
+    default:
+      fontSize = 8;
+      xOffset  = 10;
+  }
   for (size_t i = 0; i < monitors.size(); ++i)
   {
     int32_t x = spacing + (i * drawMonWidth) + (i * spacing);
@@ -78,12 +91,14 @@ void WindowMgrWidget::RefreshWindows()
     appFont.setBold(true);
     painter.setFont(appFont);
     painter.setPen(QPen(Qt::white, 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.drawText(QPoint(x + xOffset, y + 25), monitors[i].MonitorName.c_str());
 
-    painter.drawText(QPoint(x + 10, y + 25), monitors[i].MonitorName.c_str());
+    appFont.setPointSize(fontSize);
+    painter.setFont(appFont);
     QString str = "Pos: " + QString::number(monitors[i].X) + ", " + QString::number(monitors[i].Y);
-    painter.drawText(QPoint(x + 10, y + 45), str);
+    painter.drawText(QPoint(x + xOffset, y + 45), str);
     str = "Dim: " + QString::number(monitors[i].Width) + ", " + QString::number(monitors[i].Height);
-    painter.drawText(QPoint(x + 10, y + 65), str);
+    painter.drawText(QPoint(x + xOffset, y + 65), str);
   }
   
   MonitorDisplay->setPixmap(*BaseMonPixmap);
@@ -172,7 +187,7 @@ WindowMgrWidget::WindowMgrWidget(QWidget* parent) :
   appLayout->addWidget(ApplicationTable, 0, 0, 1, 1);
 
   RefreshButton = new QToolButton(this);
-  RefreshButton->installEventFilter(this);
+//  RefreshButton->installEventFilter(this);
   RefreshButton->setText("Refresh");
   RefreshButton->setIcon(QIcon(":/SimRU/resources/refresh.png"));
   RefreshButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
